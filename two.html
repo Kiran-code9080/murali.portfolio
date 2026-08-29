@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muralidharan T | Senior ERP Functional Consultant</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init({ publicKey: "A8GY5Y4s-MORVV50t" });
+        })();
+    </script>
+
+    <style>
+        :root {
+            --primary: #10B981;       /* Electric Emerald */
+            --primary-glow: rgba(16, 185, 129, 0.15);
+            --bg: #090D16;           /* Deep Executive Navy/Black */
+            --card-bg: #111827;      /* Solid Slate Card */
+            --border: #1E293B;
+            --border-hover: #334155;
+            --text: #F9FAFB;
+            --text-dim: #9CA3AF;
+            --heading-font: 'Syne', sans-serif;
+            --body-font: 'Outfit', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: var(--body-font);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        /* Main Container Layout */
+        .layout-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Left Fixed Sidebar */
+        aside.sidebar {
+            width: 35%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid var(--border);
+        }
+
+        /* Right Content Container */
+        main.content {
+            width: 65%;
+            padding: 60px 60px 100px;
+        }
+
+        /* Sidebar Elements */
+        .profile-title h1 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .profile-title h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .sidebar-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav a span.line {
+            width: 20px;
+            height: 1px;
+            background: var(--text-dim);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            color: #fff;
+        }
+
+        .sidebar-nav a:hover span.line, .sidebar-nav a.active span.line {
+            width: 40px;
+            background: var(--primary);
+        }
+
+        .sidebar-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 90px;
+        }
+
+        .section-heading {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Experience Vertical Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 1px solid var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .timeline-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+        }
+
+        .timeline-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .timeline-company {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            background: rgba(255,255,255,0.05);
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        /* Bento Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .info-card h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Pill Skills Badge */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .skill-pill i { color: var(--primary); }
+
+        .skill-pill:hover {
+            border-color: var(--primary);
+            color: #fff;
+            background: var(--primary-glow);
+        }
+
+        /* Form Inputs */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        /* Mobile Header */
+        .mobile-header {
+            display: none;
+            padding: 20px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        @media (max-width: 992px) {
+            .layout-container { flex-direction: column; }
+            aside.sidebar { width: 100%; height: auto; position: relative; padding: 40px 20px; }
+            main.content { width: 100%; padding: 40px 20px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout-container">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div>
+                <div class="profile-title">
+                    <h1>Muralidharan T</h1>
+                    <h2>ERP Functional Consultant</h2>
+                    <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 15px;">
+                        Optimizing enterprise supply chains with data-driven workflows and seamless integrations.
+                    </p>
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--primary);">
+                        <span id="typed"></span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#about" class="active"><span class="line"></span> ABOUT</a>
+                    <a href="#experience"><span class="line"></span> EXPERIENCE</a>
+                    <a href="#skills"><span class="line"></span> SKILLS & TOOLS</a>
+                    <a href="#certifications"><span class="line"></span> CERTIFICATIONS</a>
+                    <a href="#contact"><span class="line"></span> CONTACT</a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="javascript:void(0)" onclick="triggerCvDownload()" class="btn-action">
+                    <i class="fas fa-file-arrow-down"></i> Download Resume
+                </a>
+                <div style="display: flex; gap: 15px; font-size: 1.2rem; margin-top: 10px; color: var(--text-dim);">
+                    <a href="mailto:mdharan1094@gmail.com" style="color: inherit;"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+918148399205" style="color: inherit;"><i class="fas fa-phone"></i></a>
+                    <span style="font-size: 0.85rem; font-family: var(--mono); margin-left: auto;">Bangalore, IN</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN SCROLLABLE CONTENT -->
+        <main class="content">
+
+            <!-- ABOUT -->
+            <section id="about" data-aos="fade-up">
+                <h2 class="section-heading">About Me</h2>
+                <p style="color: var(--text-dim); font-size: 1.05rem; margin-bottom: 25px;">
+                    Functional Consultant with **4.7+ years** of hands-on experience bridging core operational processes and enterprise ERP systems. Specialized in Supply Chain Management (SCM), Inventory Optimization, Procurement, and Warehouse operations.
+                </p>
+
+                <div class="grid-2">
+                    <div class="info-card">
+                        <h4><i class="fas fa-graduation-cap" style="color: var(--primary); margin-right: 8px;"></i> Education</h4>
+                        <p style="color: #fff; font-size: 0.95rem;">B.Tech - Mechanical Engg.</p>
+                        <p style="color: var(--text-dim); font-size: 0.85rem;">Pondicherry University · 79% Grade</p>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="fas fa-language" style="color: var(--primary); margin-right: 8px;"></i> Languages</h4>
+                        <p style="color: var(--text-dim); font-size: 0.9rem;">Tamil (Native), English (Fluent), Telugu, Hindi</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section id="experience" data-aos="fade-up">
+                <h2 class="section-heading">Experience</h2>
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <div>
+                                    <div class="timeline-title">Freelance ERP Functional Consultant</div>
+                                    <div class="timeline-company">Implementation & Production Support</div>
+                                </div>
+                                <span class="timeline-date">Dec 2023 – Jan 2026</span>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">
+                                Directed client business requirement gathering, gap analysis, BRD/FRD authoring, master data cleanup/migration, UAT test case execution, and Go-Live support across Inventory & Warehouse modules.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <div>
+                                    <div class="timeline-title">SQL Production Support</div>
+                                    <div class="timeline-company">Tata Consultancy Services (TCS)</div>
+                                </div>
+                                <span class="timeline-date">Sept 2022 – Nov 2023</span>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">
+                                Delivered L2 SLA-driven technical support for retail client environments. Used ServiceNow for ticketing, performed SQL queries for data reconciliation, and conducted root-cause analyses (RCA).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <div>
+                                    <div class="timeline-title">ERP Functional Consultant</div>
+                                    <div class="timeline-company">Roadmap IT Solutions</div>
+                                </div>
+                                <span class="timeline-date">Feb 2021 – May 2022</span>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">
+                                Spearheaded end-to-end ERP implementations tailored to manufacturing businesses. Managed functional customizations, coordinated with technical teams, and trained end-users.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills" data-aos="fade-up">
+                <h2 class="section-heading">Skills & Tools</h2>
+                <div class="skills-container">
+                    <span class="skill-pill"><i class="fas fa-boxes-stacked"></i> Inventory Management</span>
+                    <span class="skill-pill"><i class="fas fa-warehouse"></i> Warehouse Management</span>
+                    <span class="skill-pill"><i class="fas fa-truck-field"></i> Procurement (P2P)</span>
+                    <span class="skill-pill"><i class="fas fa-database"></i> Oracle SQL Querying</span>
+                    <span class="skill-pill"><i class="fas fa-headset"></i> ServiceNow Incident Mgmt</span>
+                    <span class="skill-pill"><i class="fas fa-chart-line"></i> Power BI & Tableau</span>
+                    <span class="skill-pill"><i class="fas fa-sitemap"></i> Gap-Fit & BRD Authoring</span>
+                    <span class="skill-pill"><i class="fas fa-user-check"></i> UAT Execution & Training</span>
+                </div>
+            </section>
+
+            <!-- CERTIFICATIONS -->
+            <section id="certifications" data-aos="fade-up">
+                <h2 class="section-heading">Certifications</h2>
+                <div class="grid-2">
+                    <div class="info-card">
+                        <h4 style="color: var(--primary);">ITIL Foundation</h4>
+                        <p style="color: var(--text-dim); font-size: 0.85rem;">IT Service Management Standards</p>
+                    </div>
+                    <div class="info-card">
+                        <h4 style="color: var(--primary);">Business Analyst with AI</h4>
+                        <p style="color: var(--text-dim); font-size: 0.85rem;">Currently Pursuing · Guvi HCL</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Software Security Assurance</h4>
+                        <p style="color: var(--text-dim); font-size: 0.85rem;">Software Lifecycle Safety</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Diploma in Computer Apps</h4>
+                        <p style="color: var(--text-dim); font-size: 0.85rem;">Core Technical Systems</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" data-aos="fade-up">
+                <h2 class="section-heading">Get In Touch</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" class="form-control" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-action" id="submit-btn" style="width: 100%;">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p id="form-status" style="margin-top: 10px; font-size: 0.85rem; text-align: center;"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+
+        // Download CV Helper
+        function triggerCvDownload() {
+            const cvPath = "Murali_ERP_CV.pdf";
+            const a = document.createElement('a');
+            a.href = cvPath;
+            a.download = "Muralidharan_T_ERP_CV.pdf";
+            a.target = "_blank";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // TypedJS
+        new Typed("#typed", {
+            strings: ["Supply Chain Specialist", "Oracle SQL Support", "Business Analyst"],
+            typeSpeed: 50, backSpeed: 30, loop: true
+        });
+
+        // EmailJS Submission
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const btn = document.getElementById("submit-btn");
+            const status = document.getElementById("form-status");
+            btn.innerText = "Sending...";
+            
+            emailjs.sendForm("service_753xgur", "template_edmn3me", form)
+                .then(() => {
+                    status.innerText = "✓ Message Sent Successfully!";
+                    status.style.color = "var(--primary)";
+                    form.reset();
+                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                }, () => {
+                    status.innerText = "✕ Failed to send message.";
+                    status.style.color = "#F43F5E";
+                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                });
+        });
+    </script>
+</body>
+</html>
